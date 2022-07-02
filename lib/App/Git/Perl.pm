@@ -8,7 +8,7 @@ App::Git::Perl - adds custom git command "git perl" to make it easier to monitor
 
 =head1 DESCRIPTION
 
-This is a stub module, see F<git-perl> for details of the app.
+This is a stub module, see L<git-perl> for details of the app.
 
 =head1 AUTHOR
 
