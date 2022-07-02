@@ -325,11 +325,37 @@ sub main {
 main(@ARGV);
 
 __END__ # Documentation
-=head1 NAME
+
+=head1 git perl ... - work easily with Perl CPAN modules repositories
+
+=head2 NAME
 
 git-perl - new git subcommad (git perl), that makes it easier to monitor recent changes in perl modules, and make you collaborate faster.
 
-=head1 SYNOPSIS
+=head2 USAGE
+
+    git perl recent                                     = shows recent list of changes from https://metacpan.org/recent
+    git perl log BAYASHI/Object-Container-0.16          = git clone repository and show latest changes
+    git perl log BAYASHI/Object-Container-0.16 remove   = remove cloned repository
+    git perl log Log::Any                               = git clone repository and show latest changes
+    git perl log Log::Any remove                        = remove cloned repository
+    git perl clone BAYASHI/Object-Container-0.16        = git clone repository
+    git perl clone BAYASHI/Object-Container-0.16 remove = remove cloned repository
+    git perl clone Log::Any                             = git clone repository
+    git perl clone Log::Any remove                      = remove cloned repository
+    git perl local                                      = list cloned repositories
+    git perl local object-container-perl                = list cloned repository 'object-container-perl'
+    git perl local object-container-perl log            = show latest changes in repository
+    git perl local object-container-perl remove         = remove local repository stored in 'object-container-perl'
+    git perl local Log::Any                             = git clone repository ( get remote repository locally )
+    git perl local Log::Any remove                      = remove cloned repository
+
+    git perl config                                     = show current config ( from ~/.config/git-perl.conf )
+    git perl config dir                                 = show value of 'dir' from config
+    git perl config dir ~/git/perl                      = set value of 'dir' to '~/git/perl'
+    git perl config --unset dir                         = remove variable 'dir' from config file
+
+=head2 SYNOPSIS
 
     $ git perl config dir ~/git/perl
     $ git perl recent
@@ -358,7 +384,7 @@ git-perl - new git subcommad (git perl), that makes it easier to monitor recent 
     $ git perl local p5-mite remove
     Removed repository stored in subdir 'p5-mite'.
 
-=head1 DESCRIPTION
+=head2 DESCRIPTION
 
 It makes you easy to monitor recent changes in perl modules, and make you collaborate faster.
 
@@ -366,11 +392,7 @@ It is useful to monitor/read the latest code change in recently uploaded distrib
 
 It will clone the remote repository locally, and you can easily collaborate on them, if/when needed.
 
-=head1 AUTHOR
-
-Nedzad Hrnjica <nedzad@nedzadhrnjica.com>
-
-=head1 INSTALLATION
+=head2 INSTALLATION
 
 Using C<cpan>
 
@@ -382,34 +404,13 @@ Manual install:
  $ make
  $ make install
 
-=head1 LICENSE
+=head2 AUTHOR
+
+Nedzad Hrnjica <nedzad@nedzadhrnjica.com>
+
+=head2 LICENSE
 
  Perl License (perl)
-
-=head1 README
-
-Usage:
-
-  git perl recent                                     = shows recent list of changes from https://metacpan.org/recent
-  git perl log BAYASHI/Object-Container-0.16          = git clone repository and show latest changes
-  git perl log BAYASHI/Object-Container-0.16 remove   = remove cloned repository
-  git perl log Log::Any                               = git clone repository and show latest changes
-  git perl log Log::Any remove                        = remove cloned repository
-  git perl clone BAYASHI/Object-Container-0.16        = git clone repository
-  git perl clone BAYASHI/Object-Container-0.16 remove = remove cloned repository
-  git perl clone Log::Any                             = git clone repository
-  git perl clone Log::Any remove                      = remove cloned repository
-  git perl local                                      = list cloned repositories
-  git perl local object-container-perl                = list cloned repository 'object-container-perl'
-  git perl local object-container-perl log            = show latest changes in repository
-  git perl local object-container-perl remove         = remove local repository stored in 'object-container-perl'
-  git perl local Log::Any                             = git clone repository ( get remote repository locally )
-  git perl local Log::Any remove                      = remove cloned repository
-
-  git perl config                                     = show current config ( from ~/.config/git-perl.conf )
-  git perl config dir                                 = show value of 'dir' from config
-  git perl config dir ~/git/perl                      = set value of 'dir' to '~/git/perl'
-  git perl config --unset dir                         = remove variable 'dir' from config file
 
 =cut
 
