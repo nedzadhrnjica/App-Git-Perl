@@ -1,4 +1,4 @@
-use 5.018;
+use 5.006;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
@@ -7,7 +7,7 @@ WriteMakefile(
   ABSTRACT_FROM    => 'lib/App/Git/Perl.pm',
   AUTHOR           => 'Nedzad Hrnjica',
   LICENSE          => 'perl',
-  MIN_PERL_VERSION => '5.018',
+  MIN_PERL_VERSION => '5.006',
   EXE_FILES        => ['script/git-perl'],
   PREREQ_PM        => {
     'strict' => 0,
