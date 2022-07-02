@@ -1,7 +1,9 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.4";
+our $VERSION = "0.1.5";
 
+# 0.1.5 - 2022.07.02
+#       - updated documentation in script/git-perl and README.md to use head1 (head2 looks awful)
 # 0.1.4 - 2022.07.02
 #       - moved README into README.md, so it can be visible on github and not rendered by metacpan
 #       - testing head2 instead of head1 on metacpan/github
