@@ -1,0 +1,9 @@
+lib/App/Git/Perl.pm
+LICENSE
+Makefile
+Makefile.PL
+MANIFEST			This list of files
+MYMETA.json
+MYMETA.yml
+README
+script/git-perl
