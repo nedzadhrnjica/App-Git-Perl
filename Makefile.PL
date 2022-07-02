@@ -9,10 +9,6 @@ WriteMakefile(
   LICENSE          => 'perl',
   MIN_PERL_VERSION => '5.006',
   EXE_FILES        => ['script/git-perl'],
-  PREREQ_PM        => {
-    'strict' => 0,
-    'warnings' => 0,
-  },
   (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
     'meta-spec' => { version => 2 },
     resources => {
