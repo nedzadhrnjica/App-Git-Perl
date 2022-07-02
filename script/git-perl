@@ -1,7 +1,10 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.3";
+our $VERSION = "0.1.4";
 
+# 0.1.4 - 2022.07.02
+#       - moved README into README.md, so it can be visible on github and not rendered by metacpan
+#       - testing head2 instead of head1 on metacpan/github
 # 0.1.3 - 2022.07.02
 #       - updated AUTHOR information in README and git-perl
 #       - updated link to git-perl from App::Git::Perl
