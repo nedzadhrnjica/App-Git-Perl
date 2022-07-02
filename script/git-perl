@@ -1,7 +1,9 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.1";
+our $VERSION = "0.1.2";
 
+# 0.1.2 - 2022.07.02
+#       - bumped version to 0.1.2, since I forgot to update version in lib/App/Git/Perl.pm
 # 0.1.1 - 2022.07.02
 #       - remove "use strict", and "use warnings"
 #       - updated documentation in README and script/git-perl to show 'git-perl' and not 'git' in metacpan
