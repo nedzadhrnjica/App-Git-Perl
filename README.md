@@ -1,10 +1,8 @@
-# git perl ... - work easily with Perl CPAN modules repositories
+# NAME
 
-## NAME
+git-perl ... - work easily with Perl CPAN modules repositories
 
-git-perl - new git subcommad (git perl), that makes it easier to monitor recent changes in perl modules, and make you collaborate faster.
-
-## USAGE
+# USAGE
 
     git perl recent                                     = shows recent list of changes from https://metacpan.org/recent
     git perl log BAYASHI/Object-Container-0.16          = git clone repository and show latest changes
@@ -27,7 +25,7 @@ git-perl - new git subcommad (git perl), that makes it easier to monitor recent 
     git perl config dir ~/git/perl                      = set value of 'dir' to '~/git/perl'
     git perl config --unset dir                         = remove variable 'dir' from config file
 
-## SYNOPSIS
+# SYNOPSIS
 
     $ git perl config dir ~/git/perl
     $ git perl recent
@@ -56,7 +54,7 @@ git-perl - new git subcommad (git perl), that makes it easier to monitor recent 
     $ git perl local p5-mite remove
     Removed repository stored in subdir 'p5-mite'.
 
-## DESCRIPTION
+# DESCRIPTION
 
 It makes you easy to monitor recent changes in perl modules, and make you collaborate faster.
 
@@ -64,7 +62,7 @@ It is useful to monitor/read the latest code change in recently uploaded distrib
 
 It will clone the remote repository locally, and you can easily collaborate on them, if/when needed.
 
-## INSTALLATION
+# INSTALLATION
 
 Using `cpan`
 
@@ -76,10 +74,10 @@ Manual install:
     $ make
     $ make install
 
-## AUTHOR
+# AUTHOR
 
 Nedzad Hrnjica <nedzad@nedzadhrnjica.com>
 
-## LICENSE
+# LICENSE
 
     Perl License (perl)
