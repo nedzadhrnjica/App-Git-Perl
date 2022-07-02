@@ -315,40 +315,38 @@ sub main {
 main(@ARGV);
 
 __END__ # Documentation
-
 =head1 NAME
 
-git perl - new git subcommad (git perl), that makes it easier to monitor recent changes in perl modules, and make you collaborate faster.
+git-perl - new git subcommad (git perl), that makes it easier to monitor recent changes in perl modules, and make you collaborate faster.
 
 =head1 SYNOPSIS
 
     $ git perl config dir ~/git/perl
     $ git perl recent
-...
-02 Jul 2022 17:17:12 UTC GEEKRUTH/Dist-Zilla-PluginBundle-Author-GEEKRUTH-1.0202
-02 Jul 2022 17:26:20 UTC GENE/MIDI-Bassline-Walk-0.0402
-02 Jul 2022 17:27:54 UTC GEEKRUTH/Task-BeLike-GEEKRUTH-1.0200
-02 Jul 2022 18:00:59 UTC GEEKRUTH/DBIx-Class-Schema-ResultSetNames-1.0301
-02 Jul 2022 19:16:57 UTC DANX/Weather-NHC-TropicalCyclone-0.32
-02 Jul 2022 19:31:17 UTC TOBYINK/Mite-0.002003
+    ...
+    02 Jul 2022 17:17:12 UTC GEEKRUTH/Dist-Zilla-PluginBundle-Author-GEEKRUTH-1.0202
+    02 Jul 2022 17:26:20 UTC GENE/MIDI-Bassline-Walk-0.0402
+    02 Jul 2022 17:27:54 UTC GEEKRUTH/Task-BeLike-GEEKRUTH-1.0200
+    02 Jul 2022 18:00:59 UTC GEEKRUTH/DBIx-Class-Schema-ResultSetNames-1.0301
+    02 Jul 2022 19:16:57 UTC DANX/Weather-NHC-TropicalCyclone-0.32
+    02 Jul 2022 19:31:17 UTC TOBYINK/Mite-0.002003
 
     $ git perl log TOBYINK/Mite-0.002003
+    commit 90c6ba708e995f7e06af559613c99ba252ee199a (HEAD -> master, origin/master, origin/HEAD)
+    Author: Toby Inkster <mail@tobyinkster.co.uk>
+    Date:   Sat Jul 2 20:40:44 2022 +0100
 
-commit 90c6ba708e995f7e06af559613c99ba252ee199a (HEAD -> master, origin/master, origin/HEAD)
-Author: Toby Inkster <mail@tobyinkster.co.uk>
-Date:   Sat Jul 2 20:40:44 2022 +0100
+        Fix typos in the documentation for accessor
 
-    Fix typos in the documentation for accessor
-
-diff --git a/lib/Mite/Manual/Syntax.pod b/lib/Mite/Manual/Syntax.pod
-index e6e5f91..54fe23b 100644
-...
+    diff --git a/lib/Mite/Manual/Syntax.pod b/lib/Mite/Manual/Syntax.pod
+    index e6e5f91..54fe23b 100644
+    ...
 
     $ git perl local
-p5-mite Mite 0.002003
+    p5-mite Mite 0.002003
 
     $ git perl local p5-mite remove
-Removed repository stored in subdir 'p5-mite'.
+    Removed repository stored in subdir 'p5-mite'.
 
 =head1 DESCRIPTION
 
