@@ -347,11 +347,15 @@ sub main {
       $modulefile = qx{ cd "${gitdirs}"; grep VERSION_FROM "$local/Makefile.PL" 2>/dev/null | grep "=>" | cut -d"=" -f2 | cut -d\\' -f2 | cut -d\\" -f2 | sed -e "s#^#$local/#" };
       chomp( $modulefile );
       if ( not $modulefile ) {
+        $modulefile = qx{ cd "${gitdirs}"; grep "all_from" "$local/Makefile.PL" 2>/dev/null | cut -d\\' -f2 | cut -d\\" -f2 | sed -e "s#^#$local/#" };
+        chomp( $modulefile );
+      }
+      if ( not $modulefile ) {
         $modulefile = qx{ cd "${gitdirs}"; find "$local/lib" -iname "*.pm" 2>/dev/null | xargs grep -H "package " | sed -e "s/.pm:.*/.pm/" | head -n 1 };
         chomp( $modulefile );
       }
       if ( $modulefile ) {
-        $module = qx{ cd "${gitdirs}"; cat "$modulefile" | grep "package " | sed -e "s/package //" | cut -d";" -f1 | head -n 1 };
+        $module = qx{ cd "${gitdirs}"; cat "$modulefile" | grep "^\\s*package " | sed -e "s/package //" | cut -d";" -f1 | head -n 1 };
         chomp( $module );
         if ( not $module ) {
           $module = $modulefile;
