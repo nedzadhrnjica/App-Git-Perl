@@ -1,4 +1,5 @@
 ChangeLog
+CONTRIBUTING.md
 lib/App/Git/Perl.pm
 LICENSE
 Makefile
