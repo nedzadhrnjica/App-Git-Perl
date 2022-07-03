@@ -16,7 +16,9 @@ WriteMakefile(
         type       => 'git',
         url        => 'https://github.com/nedzadhrnjica/App-Git-Perl.git',
         web        => 'https://github.com/nedzadhrnjica/App-Git-Perl',
-        bugtracker => 'https://github.com/nedzadhrnjica/App-Git-Perl/issues',
+      },
+      bugtracker => {
+        web        => 'https://github.com/nedzadhrnjica/App-Git-Perl/issues',
       },
     }})
   : ()

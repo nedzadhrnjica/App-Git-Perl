@@ -1,7 +1,12 @@
 Revision history for App::Git::Perl
 
-0.1.7    2022-07-03 03:37
+0.1.8    2022-07-03 03:53
 
+- updated bugtracking link in Makefile.PL
+
+0.1.7    2022-07-03 03:38
+
+- bump to version 0.1.7
 - added CONTRIBUTING.md
 - fixed bugtracker link in Makefile.PL
 - Added ChangeLog to MANIFEST

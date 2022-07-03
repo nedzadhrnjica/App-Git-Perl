@@ -1,7 +1,9 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.7";
+our $VERSION = "0.1.8";
 
+# 0.1.8 - 2022.07.03
+#       - updated bugtracker link in Makefile.PL
 # 0.1.7 - 2022.07.03
 #       - added CONTRIBUTING.md
 #       - fixed bugtracker in Makefile.PL

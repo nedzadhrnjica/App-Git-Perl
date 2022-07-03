@@ -1,6 +1,6 @@
 package App::Git::Perl;
 
-our $VERSION = '0.1.7';
+our $VERSION = '0.1.8';
 
 =head1 NAME
 
