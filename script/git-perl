@@ -79,6 +79,21 @@ EOF
 
 }
 
+sub httpget {
+  use HTTP::Tiny;
+
+  my $url = shift;
+  return "" if not $url;
+
+  my $response = HTTP::Tiny->new->get( $url );
+
+  if ( length $response->{content} ) {
+    return $response->{content}
+  }
+
+  return "";
+}
+
 sub config {
   my ($name,$value) = (shift,shift);
 
@@ -126,15 +141,34 @@ sub clone {
     $url = "https://metacpan.org/pod/$module";
   } else {
     logger("Getting https://metacpan.org endpoint for '$module'...");
-    my $urlpart = qx{ curl -s "https://metacpan.org/recent" | grep "$module" | head -n 1 | sed -e "s/.*a href=//" | cut -d\\" -f2 };
-    chomp($urlpart);
+
+    my $test = httpget("https://metacpan.org/recent");
+    my $urlpart = "";
+    my @records = split("<tr", $test);
+    foreach my $record (@records) {
+      if ( $record =~ /a href="([^"]*)".*${module}/s ) {
+        $urlpart = $1;
+        last;
+      }
+    }
+
     $url = "https://metacpan.org${urlpart}";
     logger("URL: [$url]");
   }
 
   logger("Getting repository details from '$url'...");
-  my $repository = qx{ curl -s "$url" | grep ">Repository<" | sed -e "s/.* href=//" | cut -d\\" -f2 };
-  chomp($repository);
+
+  my $test = httpget( $url );
+  my $repository = "";
+  #my @records = split("<a", $test);
+  #foreach my $record (@records) {
+  foreach my $record ( split("<a", $test) ) {
+    if ( $record =~ / href="([^"]*)".*>Repository</s ) {
+      $repository = $1;
+      last;
+    }
+  }
+
   logger("REPOSITORY: [$repository]");
   if ( not $repository ) {
     logger("ERROR: Respository for module '$module' does not exist!");
@@ -234,8 +268,20 @@ sub main {
   }
 
   if ( $command eq "recent" ) {
-    #print qx{ curl -s "https://metacpan.org/recent" | grep "td" | grep class | grep name | tac | sed -e "s/.* title=//" | cut -d\\" -f2 };
-    print qx{ curl -s "https://metacpan.org/recent"  | tr '\\n' ' ' | sed -e "s/<tr/\\n<tr/g" | grep "^<tr" | grep "title=" --color=never | sed -e 's/.*title="\\([^"]*\\)".* sort="\\([^"]*\\)".*/\\2 \\1/' | tac };
+
+    # get a list of recent repositories
+
+    my $test = httpget("https://metacpan.org/recent");
+    my @repositories;
+    my @records = split("<tr", $test);
+    foreach my $record (@records) {
+      if ( $record =~ /title="([^"]*)".* sort="([^"]*)"/s ) {
+        push( @repositories, "$2 $1" );
+      }
+    }
+    @repositories = reverse @repositories;
+    print join("\n", @repositories, "");
+
     exit;
   }
 
