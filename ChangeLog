@@ -1,7 +1,14 @@
 Revision history for App::Git::Perl
 
-0.1.9    2022-07-03 05:55
+0.1.10   2022-07-03 13:42
 
+- using HTTP::Tiny instead of curl
+- updated minimum version of perl 5.14 because we are now using HTTP::Tiny instead of curl
+
+0.1.9    2022-07-03 06:00
+
+- bump to version 0.1.9
+- added tests to MANIFEST/distribution
 - added tests
 
 0.1.8    2022-07-03 03:53
