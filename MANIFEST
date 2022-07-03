@@ -9,3 +9,6 @@ MYMETA.json
 MYMETA.yml
 README.md
 script/git-perl
+t/0-start.t
+t/1-external-programs.t
+t/2-script.t
