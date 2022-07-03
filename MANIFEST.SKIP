@@ -2,4 +2,4 @@ MANIFEST.SKIP
 notes.md
 .git/
 .tar.gz
-crate-changelog.pl
+create-changelog.pl
