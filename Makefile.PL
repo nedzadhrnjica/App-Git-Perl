@@ -13,9 +13,9 @@ WriteMakefile(
     'meta-spec' => { version => 2 },
     resources => {
       repository => {
-        type => 'git',
-        url  => 'https://github.com/nedzadhrnjica/App-Git-Perl.git',
-        web  => 'https://github.com/nedzadhrnjica/App-Git-Perl',
+        type       => 'git',
+        url        => 'https://github.com/nedzadhrnjica/App-Git-Perl.git',
+        web        => 'https://github.com/nedzadhrnjica/App-Git-Perl',
         bugtrucker => 'https://github.com/nedzadhrnjica/App-Git-Perl/issues',
       },
     }})
