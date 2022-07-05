@@ -1,7 +1,10 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.10";
+our $VERSION = "0.1.11";
 
+# 0.1.11 - 2022.07.05
+#        - fixed Kwalitee Issues for distribution
+#        - find module name from Makefile.PL in a different way, additionally
 # 0.1.10 - 2022.07.03
 #        - use HTTP::Tiny instead of curl
 # 0.1.9 - 2022.07.03

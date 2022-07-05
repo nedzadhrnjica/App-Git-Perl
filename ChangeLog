@@ -1,7 +1,13 @@
 Revision history for App::Git::Perl
 
-0.1.10   2022-07-03 13:42
+0.1.11    2022-07-05 02:26
 
+- fixed Kwalitee Issues for distribution
+- git perl local - find module name from Makefile.PL in a different way
+
+0.1.10    2022-07-03 13:44
+
+- bump to version 0.1.10
 - using HTTP::Tiny instead of curl
 - updated minimum version of perl 5.14 because we are now using HTTP::Tiny instead of curl
 
