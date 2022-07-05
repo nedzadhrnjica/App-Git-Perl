@@ -2,6 +2,9 @@ package App::Git::Perl;
 
 our $VERSION = '0.1.10';
 
+use strict;
+use warnings;
+
 =head1 NAME
 
 App::Git::Perl - adds custom git command "git perl" to make it easier to monitor latest changes in perl modules, and make you collaborate faster.
@@ -16,7 +19,8 @@ Nedzad Hrnjica
 
 =head1 LICENSE
 
- Perl License (perl)
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 
