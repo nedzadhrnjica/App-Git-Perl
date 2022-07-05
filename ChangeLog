@@ -1,7 +1,13 @@
 Revision history for App::Git::Perl
 
-0.1.11    2022-07-05 02:26
+0.1.12    2022-07-05 11:59
 
+- rebuild distribution to fix changes from 0.1.11, related to Kwalitee
+
+0.1.11    2022-07-05 02:41
+
+- ignore Makefile from MANIFEST.SKIP, when preparing distribution
+- bump version to 0.1.11
 - fixed Kwalitee Issues for distribution
 - git perl local - find module name from Makefile.PL in a different way
 
