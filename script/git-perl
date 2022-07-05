@@ -1,7 +1,9 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.11";
+our $VERSION = "0.1.12";
 
+# 0.1.12 - 2022.07.05
+#        - rebuild distribution to fix changes from 0.1.11, related to Kwalitee
 # 0.1.11 - 2022.07.05
 #        - fixed Kwalitee Issues for distribution
 #        - find module name from Makefile.PL in a different way, additionally
