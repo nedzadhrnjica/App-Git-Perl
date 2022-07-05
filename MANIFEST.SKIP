@@ -1,5 +1,5 @@
 MANIFEST.SKIP
-Makefile
+Makefile$
 MYMETA.json
 MYMETA.yml
 notes.md
