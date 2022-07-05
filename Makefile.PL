@@ -20,7 +20,14 @@ WriteMakefile(
       bugtracker => {
         web        => 'https://github.com/nedzadhrnjica/App-Git-Perl/issues',
       },
-    }})
+    },
+    provides => {
+      'App::Git::Perl' => {
+        file => 'lib/App/Git/Perl.pm',
+        version => '0.1.12',
+      }
+    },
+  })
   : ()
   ),
 );
