@@ -3,6 +3,14 @@ use Test::More;
 my $script = "script/git-perl";
 
 #----------------------------------------------------------------------------
+# Skip testing on Windows
+
+if ( $ENV{COMSPEC} ) {
+  pass("Since using some of the linux cli commands, this script is not intended to use in Windows. Sorry.");
+  done_testing();
+}
+
+#----------------------------------------------------------------------------
 # configure environment for testing
 
 my $gitdir = qx{ $script config dir };

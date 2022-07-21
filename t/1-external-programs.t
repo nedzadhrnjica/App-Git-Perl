@@ -1,5 +1,12 @@
 use Test::More;
 
+# Skip testing on Windows
+
+if ( $ENV{COMSPEC} ) {
+  pass("Since using some of the linux cli commands, this script is not intended to use in Windows. Sorry.");
+  done_testing();
+}
+
 # Test for all required programs we use in backend
 
 for my $program ( "cat", "cut", "echo", "find", "git", "grep", "head", "ls", "mkdir", "rm", "sed", "sort", "tail", "uniq", "xargs" ) {
