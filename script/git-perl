@@ -132,7 +132,7 @@ sub config {
   if ( $name and $value ) {
     # set value
     qx{ mkdir -p "$ENV{HOME}/.config/" };
-    qx{ cat "$configfile" | grep -v "^$name=" > "$configfile" };
+    qx{ cat "$configfile" 2>/dev/null | grep -v "^$name=" > "$configfile" };
     qx{ echo "$name=$value" >> "$configfile" } if ( not $unset );
     return "";
   }
