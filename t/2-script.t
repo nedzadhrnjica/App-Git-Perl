@@ -46,7 +46,7 @@ if ( $test =~ /Author: / ) {
   fail("git log does not work. I cannot see changes from git log");
 }
 
-if ( $test =~ /Cloned into: (.*)/ ) {
+if ( $test =~ /Cloned into: (.*)/s ) {
   $test=$1;
   chomp($test);
 }
