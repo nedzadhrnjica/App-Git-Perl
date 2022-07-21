@@ -1,5 +1,9 @@
 Revision history for App::Git::Perl
 
+0.1.15    2022-07-21 22:37
+
+- fixed disabling testing for Windows platform
+
 0.1.14    2022-07-21 15:25
 
 - added IO::Socket::SSL as requirement

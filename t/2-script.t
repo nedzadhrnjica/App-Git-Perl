@@ -8,6 +8,7 @@ my $script = "script/git-perl";
 if ( $ENV{COMSPEC} ) {
   pass("Since using some of the linux cli commands, this script is not intended to use in Windows. Sorry.");
   done_testing();
+  exit;
 }
 
 #----------------------------------------------------------------------------
