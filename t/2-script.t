@@ -2,6 +2,9 @@ use Test::More;
 
 my $script = "script/git-perl";
 
+#----------------------------------------------------------------------------
+# configure environment for testing
+
 my $gitdir = qx{ $script config dir };
 chomp($gitdir);
 $gitdir = "." if ( not $gitdir );
