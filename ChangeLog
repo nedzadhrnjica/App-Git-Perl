@@ -1,5 +1,9 @@
 Revision history for App::Git::Perl
 
+0.1.14    2022-07-21 15:25
+
+- added IO::Socket::SSL as requirement
+
 0.1.13    2022-07-21 14:12
 
 - fixed finding module listed on cli between recent and real repositories
