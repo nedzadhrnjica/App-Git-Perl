@@ -1,7 +1,13 @@
 #!/usr/bin/env perl
 
-our $VERSION = "0.1.12";
+our $VERSION = "0.1.13";
 
+# 0.1.13 - 2022-07-21 14:12
+#        - fixed finding module listed on cli between recent and real repositories
+#        - fixed tests - checking is repository cloned and where it is clone
+#        - skip testing for Windows OS / not supported / linux only
+#        - add comments in scripts for few tests
+#        - fixed stderr leak when reading from nonexisting config file
 # 0.1.12 - 2022.07.05
 #        - rebuild distribution to fix changes from 0.1.11, related to Kwalitee
 # 0.1.11 - 2022.07.05
