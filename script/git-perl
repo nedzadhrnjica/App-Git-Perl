@@ -149,6 +149,8 @@ sub clone {
   } else {
     logger("Getting https://metacpan.org endpoint for '$module'...");
 
+    # First, try to find it within recent distributions (the point of this script)
+
     my $test = httpget("https://metacpan.org/recent");
     my $urlpart = "";
     my @records = split("<tr", $test);
@@ -159,16 +161,41 @@ sub clone {
       }
     }
 
-    $url = "https://metacpan.org${urlpart}";
-    logger("URL: [$url]");
+    # If not recent distribution, search metacpan for it
+
+    if ( not $urlpart ) {
+      my $query = $module;
+
+      $query =~ s#.*/##;      # keep only last part without any '/'
+      $query =~ s/-[0-9].*//; # remove any part after '-number' from distribution
+      $query =~ s/-/::/g;     # convert '-' into '::'
+
+      # NHRNJICA/App-Git-Perl-0.1.12
+      # App-Git-Perl-0.1.12
+      # App-Git-Perl
+      # App::Git::Perl
+
+      my $search = httpget("https://metacpan.org/pod/$query");
+
+      if ( $search =~ /$query/s ) {
+        $urlpart = "/pod/$query";
+      }
+    }
+
+    if ( $urlpart ) {
+      $url = "https://metacpan.org${urlpart}";
+    }
+  }
+
+  if ( not $url ) {
+    logger("ERROR: I cannot find module '$module' on metacpan!");
+    return;
   }
 
   logger("Getting repository details from '$url'...");
 
   my $test = httpget( $url );
   my $repository = "";
-  #my @records = split("<a", $test);
-  #foreach my $record (@records) {
   foreach my $record ( split("<a", $test) ) {
     if ( $record =~ / href="([^"]*)".*>Repository</s ) {
       $repository = $1;
