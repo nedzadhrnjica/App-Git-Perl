@@ -288,7 +288,7 @@ sub main {
   if ( $command eq "recent" ) {
 
     # get a list of recent repositories
-    my $content = httpget("https://fastapi.metacpan.org/release/_search?q=status:latest&_source=name,author,date&sort=date:desc&size=100");
+    my $content = httpget("https://fastapi.metacpan.org/release/_search?_source=name,author,date&sort=date:desc&size=100");
 
     my @repositories;
     my @records = split(/^ *{/m, $content);
