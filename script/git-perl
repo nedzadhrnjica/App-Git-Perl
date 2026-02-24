@@ -142,6 +142,12 @@ sub config {
     qx{ mkdir -p "$ENV{HOME}/.config/" };
     qx{ cat "$configfile" 2>/dev/null | grep -v "^$name=" > "$configfile" };
     qx{ echo "$name=$value" >> "$configfile" } if ( not $unset );
+
+    # If final file is empty, remove it from disk.
+    if ( -z "$configfile" ) {
+      unlink "$configfile";
+    }
+
     return "";
   }
 
