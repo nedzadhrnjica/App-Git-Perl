@@ -6,3 +6,5 @@ notes.md
 .git/
 .tar.gz
 create-changelog.pl
+script/temp.notes.md
+
