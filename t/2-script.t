@@ -28,7 +28,7 @@ ok( $test =~ /git perl config/, "Script is working properly." ) or BAIL_OUT "Scr
 # Testing 'git perl recent' / getting data from remote site
 
 $test = qx{ $script recent };
-ok( $test =~ / UTC /, "Able to get data from remote site / git perl recent." );
+ok( $test =~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9] /, "I can get data from remote site / git perl recent." );
 
 #----------------------------------------------------------------------------
 # Testing 'git perl log nonexistedmodule'
