@@ -1,5 +1,12 @@
 Revision history for App::Git::Perl
 
+0.1.17    2026-02-24 23:27
+
+- updated test script validation of initial getting data from remote site/metacpan.org
+- updated wording in test script - "Able to" -> "I can"
+- ignoring temporary development notes within MANIFEST.SKIP file
+- remove config file when the file is empty/not needed anymore
+
 0.1.16    2026-02-24 22:44
 
 - updated version to 0.1.16
