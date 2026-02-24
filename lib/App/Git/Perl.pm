@@ -1,6 +1,6 @@
 package App::Git::Perl;
 
-our $VERSION = '0.1.17';
+our $VERSION = '0.1.18';
 
 use strict;
 use warnings;
